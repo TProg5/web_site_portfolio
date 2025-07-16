@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Timur Ohotnikov</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+</head>
+<body>
+    <script src="../static/js/particles.js"></script>
+    <div class="particles" id="particles"></div>
+    
+    <div class="contact-container">
+        <div class="contact-header">
+            <h2 class="">Get In Touch</h2>
+            <p>Ready to start your next project? Let's discuss how we can work together.</p>
+            <div class="contact-divider"></div>
+        </div>
+
+        <form class="contact-form" id="contactForm" method="POST" action="/contact">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="inquiry">Type of Inquiry *</label>
+                    <select id="inquiry" name="inquiry" required>
+                        <option value="">Select inquiry type</option>
+                        <option value="web-development">Web Development</option>
+                        <option value="backend-development">Backend Development</option>
+                        <option value="consulting">Technical Consulting</option>
+                        <option value="collaboration">Collaboration</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" placeholder="Tell me about your project, timeline, and any specific requirements..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+            <div class="info-card">
+                <div class="info-icon">📧</div>
+                <div class="info-title">Email</div>
+                <div class="info-text">timur@example.com</div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">⏰</div>
+                <div class="info-title">Response Time</div>
+                <div class="info-text">Within 24 hours</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Раскомментируй следующую строку если хочешь отключить стандартную отправку формы
+            // e.preventDefault();
+            
+            const formData = new FormData(this);
+            
+            // Вариант 1: Отправка через fetch API (асинхронно)
+            /*
+            e.preventDefault();
+            
+            fetch('/contact', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showSuccessMessage();
+                } else {
+                    showErrorMessage();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showErrorMessage();
+            });
+            */
+            
+            // Вариант 2: Стандартная отправка формы (синхронно)
+            // Форма отправится автоматически на /contact с методом POST
+            
+            // Показываем состояние загрузки
+            showLoadingState();
+        });
+
+        function showLoadingState() {
+            const submitBtn = document.querySelector('.submit-btn');
+            submitBtn.textContent = 'Sending...';
+            submitBtn.style.opacity = '0.7';
+            submitBtn.disabled = true;
+        }
+
+        function showSuccessMessage() {
+            const submitBtn = document.querySelector('.submit-btn');
+            submitBtn.textContent = 'Message Sent!';
+            submitBtn.style.background = 'linear-gradient(45deg, #27ae60, #2ecc71)';
+            submitBtn.disabled = false;
+            
+            setTimeout(() => {
+                submitBtn.textContent = 'Send Message';
+                submitBtn.style.background = 'linear-gradient(45deg, #f39c12, #e67e22)';
+                submitBtn.style.opacity = '1';
+                document.getElementById('contactForm').reset();
+            }, 2000);
+        }
+
+        function showErrorMessage() {
+            const submitBtn = document.querySelector('.submit-btn');
+            submitBtn.textContent = 'Error! Try again';
+            submitBtn.style.background = 'linear-gradient(45deg, #e74c3c, #c0392b)';
+            submitBtn.disabled = false;
+            
+            setTimeout(() => {
+                submitBtn.textContent = 'Send Message';
+                submitBtn.style.background = 'linear-gradient(45deg, #f39c12, #e67e22)';
+                submitBtn.style.opacity = '1';
+            }, 2000);
+        }
+
+        // Add floating animation to form elements
+        document.querySelectorAll('input, select, textarea').forEach(element => {
+            element.addEventListener('focus', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            element.addEventListener('blur', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
