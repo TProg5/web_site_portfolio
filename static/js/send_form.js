@@ -1,10 +1,9 @@
 document.getElementById('contactForm').addEventListener('submit', function(e) {
-    
+    e.preventDefault();
+
     const formData = new FormData(this);
     
     // Вариант 1: Отправка через fetch API (асинхронно)
-    
-    e.preventDefault();
     
     fetch('/api/contact', {
         method: 'POST',
@@ -25,7 +24,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     
     
     // Вариант 2: Стандартная отправка формы (синхронно)
-    // Форма отправится автоматически на /contact с методом POST
+    // Форма отправится автоматически на /api/contact с методом POST
     
     // Показываем состояние загрузки
     showLoadingState();

@@ -4,7 +4,7 @@ from pydantic import EmailStr, Field
 
 class ContactForm(BaseModel):
     firstName: str
-    lastName: str
+    username: str
     email: EmailStr
     inquiry: str
     message: str = Field(..., max_length=300) 
