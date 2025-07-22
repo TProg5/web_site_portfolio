@@ -8,26 +8,23 @@ from app.views import pages
 
 from fastapi.staticfiles import StaticFiles
 
-app = FastAPI()
 
-def app_setting(app: FastAPI) -> FastAPI:
-    
+def create_app() -> FastAPI:
+    app = FastAPI()
+
     app.mount(
         path="/static", 
         app=StaticFiles(directory="static"), 
         name="static"
     )
- 
-    app.include_router(
-        router=contact.router,
-        prefix="/api"
-    )
-
-    app.include_router(
-        router=pages.router
-    )
+    
+    app.include_router(router=contact.router, prefix="/api")
+    app.include_router(router=pages.router)
         
+    return app
+
+app = create_app()
+
 
 if __name__ == "__main__":
-    app_setting(app=app)
     uvicorn.run(app="app.main:app", reload=True)
