@@ -1,0 +1,126 @@
+.language-button {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ffe071, #e6c44a);
+    border: none;
+    border-radius: 50%;
+    cursor: move;
+    box-shadow: 0 6px 10px #e6c44a;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+        
+.language-button:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 12px 25px #e6c44a;
+}
+
+.language-button.dragging {
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 15px 30px #e6c44a;
+}
+
+.language-icon {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-icon svg {
+    transition: transform 0.3s ease;
+}
+
+.language-button:hover .language-icon svg {
+    transform: rotate(15deg);
+}
+
+.language-dropdown {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    min-width: 200px;
+    z-index: 1001;
+}
+
+.language-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid white;
+}
+
+.language-list {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+}
+
+.language-item {
+    padding: 12px 20px;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.language-item:hover {
+    background: #f8f9fa;
+}
+
+.language-item:first-child {
+    border-radius: 12px 12px 0 0;
+}
+
+.language-item:last-child {
+    border-radius: 0 0 12px 12px;
+}
+
+.language-item.active {
+    background: #e6c44a;
+    color: white;
+}
+
+.language-flag {
+    font-size: 18px;
+}
+
+.language-name {
+    font-weight: 500;
+}
+
+/* Prevent text selection during drag */
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
