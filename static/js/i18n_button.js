@@ -5,40 +5,52 @@ class DraggableLanguageButton {
         this.isDragging = false;
         this.isDropdownOpen = false;
         this.dragOffset = { x: 0, y: 0 };
-        this.currentLanguage = 'ru';
+        this.currentLanguage = 'en';
         
         this.init();
     }
     
     init() {
-        // События для перетаскивания
-        this.button.addEventListener('mousedown', this.handleMouseDown.bind(this));
-        document.addEventListener('mousemove', this.handleMouseMove.bind(this));
-        document.addEventListener('mouseup', this.handleMouseUp.bind(this));
-        
-        // События для тач-устройств
-        this.button.addEventListener('touchstart', this.handleTouchStart.bind(this), { passive: false });
-        document.addEventListener('touchmove', this.handleTouchMove.bind(this), { passive: false });
-        document.addEventListener('touchend', this.handleTouchEnd.bind(this));
-        
-        // Клик для открытия/закрытия dropdown (только для мыши)
-        this.button.addEventListener('click', this.handleClick.bind(this));
-        
-        // Для тач-устройств используем отдельную логику
-        this.button.addEventListener('touchend', this.handleTouchClick.bind(this));
-        
-        // Клик вне кнопки для закрытия dropdown
-        document.addEventListener('click', this.handleOutsideClick.bind(this));
-        document.addEventListener('touchend', this.handleOutsideClick.bind(this));
-        
-        // Выбор языка
-        this.dropdown.addEventListener('click', this.handleLanguageSelect.bind(this));
-        this.dropdown.addEventListener('touchend', this.handleLanguageSelect.bind(this));
-        
-        // Предотвращаем контекстное меню
-        this.button.addEventListener('contextmenu', e => e.preventDefault());
-    }
+
+        if (!this.button || !this.dropdown) return;
+            // События для перетаскивания
+            const savedLang = this.getLanguageFromCookie();
+                if (savedLang) {
+                    this.setCurrentLanguage(savedLang);
+            }
+
+            this.button.addEventListener('mousedown', this.handleMouseDown.bind(this));
+            document.addEventListener('mousemove', this.handleMouseMove.bind(this));
+            document.addEventListener('mouseup', this.handleMouseUp.bind(this));
+            
+            // События для тач-устройств
+            this.button.addEventListener('touchstart', this.handleTouchStart.bind(this), { passive: false });
+            document.addEventListener('touchmove', this.handleTouchMove.bind(this), { passive: false });
+            document.addEventListener('touchend', this.handleTouchEnd.bind(this));
+            
+            // Клик для открытия/закрытия dropdown (только для мыши)
+            this.button.addEventListener('click', this.handleClick.bind(this));
+            
+            // Для тач-устройств используем отдельную логику
+            this.button.addEventListener('touchend', this.handleTouchClick.bind(this));
+            
+            // Клик вне кнопки для закрытия dropdown
+            document.addEventListener('click', this.handleOutsideClick.bind(this));
+            document.addEventListener('touchend', this.handleOutsideClick.bind(this));
+            
+            // Выбор языка
+            this.dropdown.addEventListener('click', this.handleLanguageSelect.bind(this));
+            this.dropdown.addEventListener('touchend', this.handleLanguageSelect.bind(this));
+            
+            // Предотвращаем контекстное меню
+            this.button.addEventListener('contextmenu', e => e.preventDefault());
+        }
     
+    getLanguageFromCookie() {
+        const match = document.cookie.match(/(?:^|; )lang=([^;]*)/);
+        return match ? decodeURIComponent(match[1]) : null;
+    }
+
     handleMouseDown(e) {
         e.preventDefault();
         this.startDrag(e.clientX, e.clientY);
@@ -167,26 +179,45 @@ class DraggableLanguageButton {
     handleLanguageSelect(e) {
         const languageItem = e.target.closest('.language-item');
         if (!languageItem) return;
-        
+
         const selectedLang = languageItem.dataset.lang;
         this.setCurrentLanguage(selectedLang);
         this.closeDropdown();
-        
-        // Устанавливаем cookie для смены языка
-        this.setLanguageCookie(selectedLang);
-        
-        // Перезагружаем страницу для применения нового языка
-        window.location.reload();
+
+        // === ⬇️ Новый код: запрос на сервер вместо установки куки
+        fetch(`/api/locale/${selectedLang}`, {
+            method: 'POST',
+            credentials: 'same-origin'
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Не удалось сменить язык на сервере');
+            }
+            return response.json(); // ✅ дожидаемся распаковки JSON
+        })
+        .then(data => {
+            console.log("Language set response:", data);
+            window.location.reload(); // ✅ всё хорошо — перезагрузка
+        })
+        .catch(error => {
+            console.error('Ошибка при запросе смены языка:', error);
+        });
+
+
+        // === ⬇️ Удалено: установка куки из JS
+        // this.setLanguageCookie(selectedLang);
+        // window.location.reload();
     }
-    
+
+    // === ⬇️ Удалённый метод (теперь не нужен)
+    /*
     setLanguageCookie(lang) {
-        // Устанавливаем cookie на 1 год
         const expires = new Date();
         expires.setFullYear(expires.getFullYear() + 1);
-        
-        document.cookie = `language=${lang}; expires=${expires.toUTCString()}; path=/; SameSite=Lax`;
+        document.cookie = `lang=${lang}; expires=${expires.toUTCString()}; path=/; SameSite=Lax`;
         console.log('Язык изменен на:', lang);
     }
+    */
     
     setCurrentLanguage(lang) {
         // Убираем активный класс со всех элементов
