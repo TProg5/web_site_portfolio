@@ -1,0 +1,121 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-07-25 22:28+0300\n"
+"PO-Revision-Date: 2025-07-25 22:30+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app/templates/index.html:28
+msgid "Python Developer"
+msgstr "Python Разработчик"
+
+#: app/templates/index.html:59
+msgid "Years of Python"
+msgstr "Месяцев Python"
+
+#: app/templates/index.html:59 app/templates/index.html:63
+msgid "Development"
+msgstr "Разработки"
+
+#: app/templates/index.html:63
+msgid "Month of Backend"
+msgstr "Месяцев Бэкэнд"
+
+#: app/templates/index.html:67
+msgid "Month Development"
+msgstr "Месяцев Разработки"
+
+#: app/templates/index.html:67
+msgid "of Telegram Bots"
+msgstr "Telegram Ботов"
+
+#: app/templates/index.html:78
+msgid "Download Portfolio"
+msgstr "Скачать Портфолио"
+
+#: app/templates/index.html:80
+msgid "Contact me"
+msgstr "Связаться"
+
+#: app/templates/index.html:88
+msgid "Get In Touch"
+msgstr "Свяжитесь со мной"
+
+#: app/templates/index.html:89
+msgid "Ready to start your next project? Let's discuss how we can work together."
+msgstr "Готовы к созданию нового проекта? Давайте обсудим, как мы можем работать вместе."
+
+#: app/templates/index.html:96
+msgid "First Name"
+msgstr "Имя"
+
+#: app/templates/index.html:100
+msgid "Telegram UserName"
+msgstr "Telegram UserName"
+
+#: app/templates/index.html:107 app/templates/index.html:138
+msgid "Email"
+msgstr "Почта"
+
+#: app/templates/index.html:111
+msgid "Type of Inquiry"
+msgstr "Тип запроса"
+
+#: app/templates/index.html:113
+msgid "Select inquiry type"
+msgstr "Выберите тип запроса"
+
+#: app/templates/index.html:114
+msgid "Telegram Bot"
+msgstr "Telegram Бот"
+
+#: app/templates/index.html:115
+msgid "Backend Development"
+msgstr "Бэкэнд Разработка"
+
+#: app/templates/index.html:116
+msgid "Technical Consulting"
+msgstr "Тех.Консультация"
+
+#: app/templates/index.html:117
+msgid "Collaboration"
+msgstr "Сотрудничество"
+
+#: app/templates/index.html:118
+msgid "Other"
+msgstr "Другое"
+
+#: app/templates/index.html:124
+msgid "Message"
+msgstr "Сообщение"
+
+#: app/templates/index.html:125
+msgid "Tell me about your project, timeline, and any specific requirements..."
+msgstr "Расскажите мне о вашем проекте, сроках его реализации и любых конкретных требованиях..."
+
+#: app/templates/index.html:128
+msgid "Send Message"
+msgstr "Отправить Сообщение"
+
+#: app/templates/index.html:147
+msgid "Response Time"
+msgstr "Время ответа"
+
+#: app/templates/index.html:148
+msgid "Within 24 hours"
+msgstr "В течении 24 часов"
+

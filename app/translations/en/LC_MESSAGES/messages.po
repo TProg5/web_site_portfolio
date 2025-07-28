@@ -1,0 +1,120 @@
+# English translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-07-25 22:28+0300\n"
+"PO-Revision-Date: 2025-07-25 22:29+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app/templates/index.html:28
+msgid "Python Developer"
+msgstr "Python Developer"
+
+#: app/templates/index.html:59
+msgid "Years of Python"
+msgstr "Years of Python"
+
+#: app/templates/index.html:59 app/templates/index.html:63
+msgid "Development"
+msgstr "Development"
+
+#: app/templates/index.html:63
+msgid "Month of Backend"
+msgstr "Month of Backend"
+
+#: app/templates/index.html:67
+msgid "Month Development"
+msgstr "Month Development"
+
+#: app/templates/index.html:67
+msgid "of Telegram Bots"
+msgstr "of Telegram Bots"
+
+#: app/templates/index.html:78
+msgid "Download Portfolio"
+msgstr "Download Portfolio"
+
+#: app/templates/index.html:80
+msgid "Contact me"
+msgstr "Contact me"
+
+#: app/templates/index.html:88
+msgid "Get In Touch"
+msgstr "Get In Touch"
+
+#: app/templates/index.html:89
+msgid "Ready to start your next project? Let's discuss how we can work together."
+msgstr "Ready to start your next project? Let's discuss how we can work together."
+
+#: app/templates/index.html:96
+msgid "First Name"
+msgstr "First Name"
+
+#: app/templates/index.html:100
+msgid "Telegram UserName"
+msgstr "Telegram UserName"
+
+#: app/templates/index.html:107 app/templates/index.html:138
+msgid "Email"
+msgstr "Email"
+
+#: app/templates/index.html:111
+msgid "Type of Inquiry"
+msgstr "Type of Inquiry"
+
+#: app/templates/index.html:113
+msgid "Select inquiry type"
+msgstr "Select inquiry type"
+
+#: app/templates/index.html:114
+msgid "Telegram Bot"
+msgstr "Telegram Bot"
+
+#: app/templates/index.html:115
+msgid "Backend Development"
+msgstr "Backend Development"
+
+#: app/templates/index.html:116
+msgid "Technical Consulting"
+msgstr "Technical Consulting"
+
+#: app/templates/index.html:117
+msgid "Collaboration"
+msgstr "Collaboration"
+
+#: app/templates/index.html:118
+msgid "Other"
+msgstr "Other"
+
+#: app/templates/index.html:124
+msgid "Message"
+msgstr "Message"
+
+#: app/templates/index.html:125
+msgid "Tell me about your project, timeline, and any specific requirements..."
+msgstr "Tell me about your project, timeline, and any specific requirements..."
+
+#: app/templates/index.html:128
+msgid "Send Message"
+msgstr "Send Message"
+
+#: app/templates/index.html:147
+msgid "Response Time"
+msgstr "Response Time"
+
+#: app/templates/index.html:148
+msgid "Within 24 hours"
+msgstr "Within 24 hours"
+

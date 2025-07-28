@@ -1,0 +1,119 @@
+# Translations template for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-07-25 22:28+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: app/templates/index.html:28
+msgid "Python Developer"
+msgstr ""
+
+#: app/templates/index.html:59
+msgid "Years of Python"
+msgstr ""
+
+#: app/templates/index.html:59 app/templates/index.html:63
+msgid "Development"
+msgstr ""
+
+#: app/templates/index.html:63
+msgid "Month of Backend"
+msgstr ""
+
+#: app/templates/index.html:67
+msgid "Month Development"
+msgstr ""
+
+#: app/templates/index.html:67
+msgid "of Telegram Bots"
+msgstr ""
+
+#: app/templates/index.html:78
+msgid "Download Portfolio"
+msgstr ""
+
+#: app/templates/index.html:80
+msgid "Contact me"
+msgstr ""
+
+#: app/templates/index.html:88
+msgid "Get In Touch"
+msgstr ""
+
+#: app/templates/index.html:89
+msgid "Ready to start your next project? Let's discuss how we can work together."
+msgstr ""
+
+#: app/templates/index.html:96
+msgid "First Name"
+msgstr ""
+
+#: app/templates/index.html:100
+msgid "Telegram UserName"
+msgstr ""
+
+#: app/templates/index.html:107 app/templates/index.html:138
+msgid "Email"
+msgstr ""
+
+#: app/templates/index.html:111
+msgid "Type of Inquiry"
+msgstr ""
+
+#: app/templates/index.html:113
+msgid "Select inquiry type"
+msgstr ""
+
+#: app/templates/index.html:114
+msgid "Telegram Bot"
+msgstr ""
+
+#: app/templates/index.html:115
+msgid "Backend Development"
+msgstr ""
+
+#: app/templates/index.html:116
+msgid "Technical Consulting"
+msgstr ""
+
+#: app/templates/index.html:117
+msgid "Collaboration"
+msgstr ""
+
+#: app/templates/index.html:118
+msgid "Other"
+msgstr ""
+
+#: app/templates/index.html:124
+msgid "Message"
+msgstr ""
+
+#: app/templates/index.html:125
+msgid "Tell me about your project, timeline, and any specific requirements..."
+msgstr ""
+
+#: app/templates/index.html:128
+msgid "Send Message"
+msgstr ""
+
+#: app/templates/index.html:147
+msgid "Response Time"
+msgstr ""
+
+#: app/templates/index.html:148
+msgid "Within 24 hours"
+msgstr ""
+
