@@ -7,5 +7,4 @@ class ContactForm(BaseModel):
     username: str
     email: EmailStr
     inquiry: str
-    message: str = Field(..., max_length=300) 
-    #ограничение количества символов в сообщении на уровне Pydantic
+    message: str = Field(..., max_length=300) # limitation of the number of characters in a message at the Pydantic level

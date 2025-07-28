@@ -1,8 +1,9 @@
+from typing import List
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class TelegramSettings(BaseSettings):
-    bot_token: str
-    chat_id: int
+    BOT_TOKEN: str
+    CHAT_ID: int
 
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -12,11 +13,15 @@ class TelegramSettings(BaseSettings):
     
 
 class Settings(BaseSettings):
-    admin_email: str
+    ADMIN_EMAIL: str
+    DEFAULT_LOCALE: str
+    SUPPORTED_LOCALE: List[str]
     
     model_config = SettingsConfigDict(
-        env_file=".env"
+        env_file=".env",
+        extra="ignore"
     )
 
-
-# settings = Settings()
+#Singletones
+settings = Settings()
+telegram_settings = TelegramSettings()

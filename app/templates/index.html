@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Hero Section</title>
+    <title>Portfolio</title>
+
     <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/css/connection.css">
+    <link rel="stylesheet" href="/static/css/localization_button.css">
+    <link rel="stylesheet" href="/static/css/particles.css">
+    <link rel="stylesheet" href="/static/css/profile.css">
+
 </head>
 <body>
     <script src="/static/js/particles.js"></script>
@@ -25,7 +31,7 @@
                     <div class="info-block">
                         <div class="profile-info">
                             <h1>Timur Ohotnikov</h1>
-                            <p>Python Developer</p>
+                            <p>{{ _('Python Developer') }}</p>
                         </div>
                         
                         <div class="social-links">
@@ -56,15 +62,15 @@
                 <div class="stats-section">
                     <div class="stat-item">
                         <div class="stat-number">1,5+</div>
-                        <div class="stat-label">Years of Python<br>Developed</div>
+                        <div class="stat-label">{{ _('Years of Python') }}<br>{{ _('Development') }}</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Backend<br>Developer</div>
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">{{ _('Month of Backend') }}<br>{{ _('Development') }}</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">20+</div>
-                        <div class="stat-label">Satisfied<br>customers</div>
+                        <div class="stat-number">6+</div>
+                        <div class="stat-label">{{ _('Month Development') }}<br>{{ _('of Telegram Bots') }}</div>
                     </div>
                 </div>
                 
@@ -75,9 +81,9 @@
                             <polyline points="7,10 12,15 17,10"/>
                             <line x1="12" y1="15" x2="12" y2="3"/>
                         </svg>
-                        Download Portfolio
+                        {{ _('Download Portfolio')}}
                     </a>
-                    <a href="#contact" class="btn btn-secondary">Contact me</a>
+                    <a href="#contact" class="btn btn-secondary">{{ _('Contact me') }}</a>
                 </div>
             </div>
         </div>
@@ -85,47 +91,47 @@
         <!-- Contact Section -->
         <div class="contact-container" id="contact">
             <div class="contact-header">
-                <h2 class="">Get In Touch</h2>
-                <p>Ready to start your next project? Let's discuss how we can work together.</p>
+                <h2>{{ _('Get In Touch') }}</h2>
+                <p>{{ _('Ready to start your next project? Let\'s discuss how we can work together.') }}</p>
                 <div class="contact-divider"></div>
             </div>
 
             <form class="contact-form" id="contactForm" method="POST" action="#">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="firstName">First Name *</label>
+                        <label for="firstName">{{ _('First Name') }} *</label>
                         <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
                     </div>
                     <div class="form-group">
-                        <label for="username">Telegram UserName *</label>
+                        <label for="username">{{ _('Telegram UserName') }} *</label>
                         <input type="text" id="username" name="username" placeholder="Enter your username" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="email">Email *</label>
+                        <label for="email">{{ _('Email') }} *</label>
                         <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
                     </div>
                     <div class="form-group">
-                        <label for="inquiry">Type of Inquiry *</label>
+                        <label for="inquiry">{{ _('Type of Inquiry') }} *</label>
                         <select id="inquiry" name="inquiry" required>
-                            <option value="">Select inquiry type</option>
-                            <option value="telegram-development">Telegram Bot</option>
-                            <option value="backend-development">Backend Development</option>
-                            <option value="consulting">Technical Consulting</option>
-                            <option value="collaboration">Collaboration</option>
-                            <option value="other">Other</option>
+                            <option value="">{{ _('Select inquiry type') }}</option>
+                            <option value="telegram-development">{{ _('Telegram Bot') }}</option>
+                            <option value="backend-development">{{ _('Backend Development') }}</option>
+                            <option value="consulting">{{ _('Technical Consulting') }}</option>
+                            <option value="collaboration">{{ _('Collaboration') }}</option>
+                            <option value="other">{{ _('Other') }}</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group full-width">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" placeholder="Tell me about your project, timeline, and any specific requirements..." required></textarea>
+                    <label for="message">{{ _('Message') }} *</label>
+                    <textarea id="message" name="message" placeholder="{{ _('Tell me about your project, timeline, and any specific requirements...') }}" required></textarea>
                 </div>
 
-                <button type="submit" class="submit-btn">Send Message</button>
+                <button type="submit" class="submit-btn">{{ _('Send Message') }}</button>
             </form>
 
             <div class="contact-info">
@@ -135,7 +141,7 @@
                             <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.887.728-1.615 1.615-1.615a1.615 1.615 0 0 1 .921.288L12 10.09l9.464-5.96a1.615 1.615 0 0 1 .921-.288C23.273 3.842 24 4.57 24 5.457z"/>
                         </svg>
                     </div>
-                    <div class="info-title">Email</div>
+                    <div class="info-title">{{ _('Email') }}</div>
                     <div class="info-text">ohotnikovtimur.dev@gmail.com</div>
                 </div>
                 <div class="info-card">
@@ -144,8 +150,8 @@
                             <path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/>
                         </svg>
                     </div>
-                    <div class="info-title">Response Time</div>
-                    <div class="info-text">Within 24 hours</div>
+                    <div class="info-title">{{ _('Response Time') }}</div>
+                    <div class="info-text">{{ _('Within 24 hours') }}</div>
                 </div>
             </div>
         </div>

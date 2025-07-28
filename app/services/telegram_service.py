@@ -1,19 +1,21 @@
 import logging
 import httpx
 
-from app.core.config import TelegramSettings
+from app.core.response import APIResponse
+from app.core.config import TelegramSettings, telegram_settings
 
 logger = logging.getLogger(__name__)
 
 
 async def send_telegram_message(
     message: str,
-    settings: TelegramSettings = TelegramSettings()
-):
-    url: str = f"https://api.telegram.org/bot{settings.bot_token}/sendMessage"
+    settings: TelegramSettings = telegram_settings
+):  
+    """Utility that allows you to send a message to Telegram Bot"""
 
+    url: str = f"https://api.telegram.org/bot{settings.BOT_TOKEN}/sendMessage"
     params = {
-        "chat_id": settings.chat_id,
+        "chat_id": settings.CHAT_ID,
         "text": message,
         "parse_mode": "HTML",
     }
@@ -27,9 +29,13 @@ async def send_telegram_message(
             return {"status": False, "message": f"Exception: {str(e)}"}
         
     if response.status_code in (200, 201):
-        return {"status": True, "message": "Telegram's API send message"}
+        return APIResponse(
+            status=True,
+            message="Telegram's API send message"
+        ).model_dump()
     
-    return {
-        "status": False,
-        "message": f"Telegram error: {response_data.get('description')}",
-    }
+
+    return APIResponse(
+        status=False,
+        message=f"Telegram error: {response_data.get('description')}"
+    ).model_dump()
