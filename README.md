@@ -104,13 +104,13 @@ Create and activate a virtual environment:
 ### Babel Commands
 
 Babel is used for handling translations (i18n). Below are the most common commands you'll need during development.
-#### Extract translation strings
+#### Extract translation strings:
 Scans your project for translatable strings and generates a `.pot` template:
 ```bash
 pybabel extract -F app/translations/babel.cfg -o app/translations/messages.pot .
 ```
 
-#### Initialize languages (optional)
+#### Initialize languages (optional):
 Use this only if you want to add new languages manually:
 ```bash
 # English
@@ -121,7 +121,7 @@ pybabel init -i app/translations/messages.pot -d app/translations -l ru
 ```
 This will create .po files inside app/translations/{lang}/LC_MESSAGES/.
 
-#### Compile translations
+#### Compile translations:
 If you already have .po files (e.g. cloned the repo or edited them), compile them into .mo files with:
 
 ```bash
