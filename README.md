@@ -145,7 +145,9 @@ pybabel compile -d app/translations
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+<img width="1150" height="494" alt="Web-site-portfolio-page" src="https://github.com/user-attachments/assets/3947646d-daa2-4463-885d-2414e8629cd4" />
+<img width="881" height="862" alt="Web-site-portfolio-page2" src="https://github.com/user-attachments/assets/2a55c255-4b7f-4421-bcb8-b23c978c7642" />
+<img width="345" height="291" alt="Web-site-portfolio-page3" src="https://github.com/user-attachments/assets/35c1db28-ff10-4915-a968-d055eadb0ba4" />
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
