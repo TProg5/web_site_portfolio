@@ -1,5 +1,5 @@
 import logging
-import httpx
+import aiohttp
 
 from app.core.response import APIResponse
 from app.core.config import TelegramSettings, telegram_settings
@@ -20,22 +20,26 @@ async def send_telegram_message(
         "parse_mode": "HTML",
     }
 
-    async with httpx.AsyncClient() as client:
-        try:
-            response = await client.post(url, data=params)
-            response_data = response.json()
-        except Exception as e:
-            logger.exception("Telegram request failed")
-            return {"status": False, "message": f"Exception: {str(e)}"}
-        
-    if response.status_code in (200, 201):
-        return APIResponse(
-            status=True,
-            message="Telegram's API send message"
-        ).model_dump()
-    
+    try:
+        async with aiohttp.ClientSession() as session:
+            async with session.post(url, data=params) as response:
+                response_data = await response.json()
 
-    return APIResponse(
-        status=False,
-        message=f"Telegram error: {response_data.get('description')}"
-    ).model_dump()
+                if response.status == 200:
+                    return APIResponse(
+                        success=True,
+                        message="Telegram's API sent the message"
+                    ).model_dump()
+
+                logger.error(f"Telegram error response: {response_data}")
+                return APIResponse(
+                    success=False,
+                    message=f"Telegram error: {response_data.get('description')}"
+                ).model_dump()
+
+    except Exception as e:
+        logger.exception("Telegram request failed")
+        return APIResponse(
+            success=False,
+            message=f"Exception: {str(e)}"
+        ).model_dump()

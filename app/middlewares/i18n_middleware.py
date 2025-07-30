@@ -7,10 +7,6 @@ class i18nMiddleware(BaseHTTPMiddleware):
     """
     Middleware that intercepts new users without the language set in the cookies.\n
     Will otherwise pass the language to the next endpoint being called.
-
-    :param: 
-    **app**: `FastAPI()` - An instance of the `FastAPi` application
-
     """
     def __init__(
         self, 

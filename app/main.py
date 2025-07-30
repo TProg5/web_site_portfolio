@@ -24,7 +24,7 @@ def create_app() -> FastAPI:
     app.include_router(router=i18n_api.router, prefix="/api")
     app.include_router(router=pages.router)
 
-    app.add_middleware(i18nMiddleware(app=app))
+    app.add_middleware(i18nMiddleware)
 
     return app
 

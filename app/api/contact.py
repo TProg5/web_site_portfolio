@@ -22,7 +22,7 @@ async def post_contact(
         message=MessageTemplates.contact_submission(data=data)
     )
 
-    if response["status"]:
+    if response["success"]:
 
         return JSONResponse(
             content=APIResponse(
